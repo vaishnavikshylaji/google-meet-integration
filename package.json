@@ -51,6 +51,7 @@
         "jquery": "^3.7.1",
         "laravel-vite-plugin": "^1.0",
         "lucide-react": "^0.475.0",
+        "primereact": "^10.9.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "tailwind-merge": "^3.0.1",
