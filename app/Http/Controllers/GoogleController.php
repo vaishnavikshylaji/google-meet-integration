@@ -35,8 +35,7 @@ class GoogleController extends Controller
 
         $service = new Google_Service_Calendar($client);
 
-        $randomPassword = Str::random(8);
-        $requestId = Str::random(12);
+        $requestId = time();
 
         $startTime = Carbon::now()->addMinutes(10);
         $endTime = $startTime->copy()->addMinutes(30);
@@ -44,7 +43,7 @@ class GoogleController extends Controller
         $event = new \Google_Service_Calendar_Event([
             'summary' => 'Private Google Meet Event',
             'location' => 'Online',
-            'description' => 'A private meeting with Google Meet link. Password: ' . $randomPassword,
+            'description' => 'A private meeting with Google Meet link',
             'start' => [
                 'dateTime' => $startTime->toISOString(),
                 'timeZone' => 'America/Los_Angeles',
@@ -71,8 +70,8 @@ class GoogleController extends Controller
             ],
             'attendees' => [
                 [
-                    'displayName' => 'Vaishnavi',
-                    'email' => 'vaishnaviks199732@gmail.com',
+                    'displayName' => 'Vaishnavi Hafees',
+                    'email' => 'vaishnavihafees.workspace@gmail.com',
                     'responseStatus' => 'accepted',
                 ],
             ],
@@ -135,8 +134,8 @@ class GoogleController extends Controller
             ],
             'attendees' => [
                 [
-                    'displayName' => 'Vaishnavi',
-                    'email' => 'vaishnaviks199732@gmail.com',
+                    'displayName' => 'Vaishnavi Hafees',
+                    'email' => 'vaishnavihafees.workspace@gmail.com',
                     'responseStatus' => 'accepted',
                 ],
             ],
