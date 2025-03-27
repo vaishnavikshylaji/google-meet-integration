@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CaptchaController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\GoogleController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
 
+Route::resource('google-captcha', CaptchaController::class);
 Route::get('google-login', [GoogleController::class, 'redirectToGoogle'])->name('google-login');
 Route::get('callback', [GoogleController::class, 'handleGoogleCallback']);
 Route::get('google-meet', [GoogleController::class, 'test'])->name('googleMeet');

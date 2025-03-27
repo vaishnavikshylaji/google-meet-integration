@@ -42,5 +42,8 @@ return [
         'scope' => 'https://www.googleapis.com/auth/calendar',
     ],
 
-
+    'recaptcha' => [
+        'site_key' => env('RECAPTCHA_SITE_KEY'),
+        'site_secret' => env('RECAPTCHA_SECRET_KEY'),
+    ],
 ];
